@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paralax Effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Lagu Background (otomatis & tersembunyi) -->
+    <audio id="bgm" autoplay loop hidden>
+        <source src="lagu.mp3" type="audio/mpeg">
+        Browser kamu tidak mendukung pemutar audio.
+    </audio>
+
+    <div class="paralax">
+        <img src="stars.png" id="stars">
+        <img src="meteorid.png" id="meteorid">
+        <img src="rocket.png" id="rocket">
+        <h1 id="text">Massage for AREL<br>from the universe!</h1>
+        <a href="#" id="button">scroll <3 </a>
+    </div>
+
+    <div class="description">
+        <h2>HELLOOOO!</h2><br>
+        <p>
+            Been knowing you for like a week, but honestly it’s been such a nice week! :D
+            You give off that calm yet passionate vibe, always studying, always chasing your goals. It’s inspiring, seriously. I can tell how much effort you put into everything, and I really admire that about you.
+            <br><br>
+            Arel, jangan pernah ragu sama kemampuan kamu ya. Kamu ambis, kamu rajin, dan kamu punya arah yang jelas jujur itu hal yang keren banget bahkan aku sendiri gapunya motivasi sebesar itu. Kadang kamu mungkin capek atau ragu, tapi percaya deh, semua usaha kamu sekarang bakal jadi alasan kenapa kamu bakal diterima di tempat yang kamu impikan nanti.
+            <br> <br>
+            I may not know you for long yet, but I’m already proud of how dedicated you are. Keep going, keep believing in yourself — kamu bisaaa banget! 
+            And if you ever feel tired or unmotivated, remember, there’s someone out here cheering for you. lol.
+            <br>
+            always remember KAMU BERHARGA, UR PRECIOUS, TU ES PRÉCIEUX, ERES PRECIOSO, DU BIST WERTVOLL, SEI PREZIOSO, あなたは貴重です、你是珍贵的, 당신은 소중합니다.
+        </p>
+        <div class="gif-container">
+            <img src="cute.gif" alt="cute gif" class="cute-gif">
+        </div>
+        <div class="gif-container">
+            <img src="cute1.gif" alt="cute gif" class="cute-gif">
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Script tambahan untuk memastikan musik autoplay -->
+    <script>
+const audio = new Audio('lagu.mp3');
+audio.loop = true;
+
+function playAudio() {
+  audio.play();
+  document.removeEventListener('click', playAudio);
+  document.removeEventListener('scroll', playAudio);
+}
+
+document.addEventListener('click', playAudio);
+document.addEventListener('scroll', playAudio);
+</script>
+
+<style>
+         .gif-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .cute-gif {
+            width: 120px; /* kecil dan imut */
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+
+</body>
+</html>
