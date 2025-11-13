@@ -7,8 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Lagu Background (otomatis & tersembunyi) -->
-    <audio id="bgm" autoplay loop hidden>
+   <audio controls loop style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        border-radius: 20px;
+        background: rgba(105, 110, 255, 0.5);
+        box-shadow: 0 0 10px rgba(105, 110, 255, 0.5);
+        backdrop-filter: blur(5px);
+    ">
         <source src="lagu.mp3" type="audio/mpeg">
         Browser kamu tidak mendukung pemutar audio.
     </audio>
@@ -17,8 +25,8 @@
         <img src="stars.png" id="stars">
         <img src="meteorid.png" id="meteorid">
         <img src="rocket.png" id="rocket">
-        <h1 id="text">Massage for AREL<br>from the universe!</h1>
-        <a href="#" id="button">scroll <3 </a>
+        <h1 id="text">Message for AREL<br>from the universe!</h1>
+        <button id="button">scroll down ↓</button>
     </div>
 
     <div class="description">
@@ -34,43 +42,44 @@
             <br>
             always remember KAMU BERHARGA, UR PRECIOUS, TU ES PRÉCIEUX, ERES PRECIOSO, DU BIST WERTVOLL, SEI PREZIOSO, あなたは貴重です、你是珍贵的, 당신은 소중합니다.
         </p>
+
         <div class="gif-container">
             <img src="cute.gif" alt="cute gif" class="cute-gif">
-        </div>
-        <div class="gif-container">
             <img src="cute1.gif" alt="cute gif" class="cute-gif">
         </div>
-    </div>
     </div>
 
     <script src="script.js"></script>
 
-    <!-- Script tambahan untuk memastikan musik autoplay -->
-    <script>
-const audio = new Audio('lagu.mp3');
-audio.loop = true;
+    <!-- Musik mulai setelah tombol diklik -->
 
-function playAudio() {
-  audio.play();
-  document.removeEventListener('click', playAudio);
-  document.removeEventListener('scroll', playAudio);
-}
 
-document.addEventListener('click', playAudio);
-document.addEventListener('scroll', playAudio);
-</script>
-
-<style>
-         .gif-container {
+    <style>
+        .gif-container {
             text-align: center;
             margin-top: 20px;
         }
         .cute-gif {
-            width: 120px; /* kecil dan imut */
+            width: 120px;
             height: auto;
             border-radius: 10px;
+            margin: 0 10px;
+        }
+        #button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #49495a;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+             z-index: 9999;
+        }
+        #button:hover {
+            background-color: #3448bc;
+            color: white;
         }
     </style>
-
 </body>
 </html>
